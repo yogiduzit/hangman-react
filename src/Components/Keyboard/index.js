@@ -8,8 +8,14 @@ export default function KeyBoard(props) {
   }
 
   return(
-    alphabets.map((i) => {
-      return <Button key={i} alphabet={String.fromCharCode(i + 65)}/>
-    })
+    <div className="keyboard-container">
+      <div className="buttons-container">
+        { alphabets.map((i) => <Button key={i} alphabet={String.fromCharCode(i + 65)}/>)}
+      </div>
+      <div className="alphabet-fields">
+        { props.guessWord.split('').map((i) => <p key="letter">__</p>) }
+      </div>
+    </div>
+
   );
 }
